@@ -104,7 +104,7 @@ int i;
 Console.WriteLine("TABUADA DE 7:");
 for (i = 0; i <= 10; i++)
 {
-    Console.WriteLine($"7 x {i} = {i * 7}");
+    Console.WriteLine($"7 x {i} = {i * 7}\n");
 }
 
 /*2. Faça um programa para calcular a média
@@ -119,20 +119,25 @@ cada visitante até que a capacidade máxima seja atingida. A cada visitante
 adicional, exiba o número total de visitantes até o momento.*/
 
 Random random = new Random();
-int soma = 50, maxValue = 50, novosVisitantes = 0;
+int maxVisitantes = 50, maxValue = 50, minValue = 1, novosVisitantes = 0;
 
-while (soma != 0)
+while (maxVisitantes > 0)
 {
-    novosVisitantes = random.Next(maxValue);
+    novosVisitantes = random.Next(minValue, maxValue);
     
-    while (soma - novosVisitantes < 0 || novosVisitantes == 0){
-            novosVisitantes = random.Next(maxValue);
+    while (maxVisitantes - novosVisitantes < 0){
+            novosVisitantes = random.Next(minValue, maxValue);
     }
-  
-    
-    soma = soma - novosVisitantes;
 
-    Console.WriteLine($"Entraram {novosVisitantes} novos visitantes\n");
+
+    maxVisitantes = maxVisitantes - novosVisitantes;
+
+    Console.WriteLine($"Entraram {novosVisitantes} novos visitantes");
+
+    if(maxVisitantes > 0) {
+
+        Console.WriteLine($"Ainda podem entrar {maxVisitantes}\n");
+        }
 }
 Console.WriteLine("Capacidade máxima de visitantes atingida\n");
 
