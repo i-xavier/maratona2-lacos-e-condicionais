@@ -158,7 +158,7 @@ Console.WriteLine("FOR.1- Programa de tabuada de multiplicação:\n");
 int i;
 
 Console.WriteLine("TABUADA DE 7:");
-for (i = 0; i <= 10; i++)
+for (i = 1; i <= 10; i++)
 {
     Console.WriteLine($"7 x {i} = {i * 7}\n");
 }
